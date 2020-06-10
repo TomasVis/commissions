@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "babel-node app.js input.json"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +12,11 @@
     "axios": "^0.19.2",
     "moment": "^2.26.0",
     "round-to": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.2"
   }
 }
