@@ -4,18 +4,18 @@ import { getCommissionFunction } from './helpers/commissionFunctions';
 import { up } from "round-to";
 
 const ROUND_TO = 2;
-
-const execute = async () => {
+export const forTest = () => 'hello';
+export const execute = async (apiRequestFunction, fileReadFunction) => {
   try {
-    const allCommissions = await request();
-    const data = await readFromFile(process.argv[2], "utf8");
+    const allCommissions = await apiRequestFunction();
+    const data = await fileReadFunction(process.env.npm_config_path, "utf8");
     handleData(JSON.parse(data), allCommissions);
   } catch (error) {
-    console.log(console.log(error));
+    console.log(error);
   }
 };
 
-const handleData = (operations, commissions) => {
+export const handleData = (operations, commissions) => {
   const results = operations.map((operation) => {
     const commisionFunction = getCommissionFunction(
       operation.user_type,
@@ -26,4 +26,4 @@ const handleData = (operations, commissions) => {
   results.map((x) => process.stdout.write(x + "\n"));
 };
 
-execute();
+execute(request, readFromFile);

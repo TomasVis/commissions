@@ -15,11 +15,19 @@ install dependencies:
 ```sh
 $ npm install
 ```
-replace ../example.json with your file to run the program:
+replace ../example.json with path to your file to run the program:
 ```sh
-$ node app.js ../example.json
+$ npm --path=../example.json run dev
 ```
 or run with example json file:
 ```sh
-$ node app.js input.json
+$ npm --path=input.json run dev
+```
+to run tests:
+```sh
+$ npm --path=input.json run test
+```
+to run tests with report in html:
+```sh
+$ npm --path=input.json run test-html
 ```

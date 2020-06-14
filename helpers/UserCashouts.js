@@ -4,16 +4,16 @@ const DATE_FORMAT = "YYYYMMDD";
 
 export default class UserCashOuts {
 
-    getUserCashOuts  (user, date) {
+    getUserCashOuts  (userId, date) {
      const week = moment(date, DATE_FORMAT).isoWeek();
      const year = moment(date, DATE_FORMAT).year();
-     if (!this[user]) {
+     if (!this[userId]) {
        return 0;
-     } else if (!this[user][year]) {
+     } else if (!this[userId][year]) {
        return 0;
-     } else if (!this[user][year][week]) {
+     } else if (!this[userId][year][week]) {
        return 0;
-     } else return this[user][year][week];
+     } else return this[userId][year][week];
    };
  
     setUserCashOut (userId, amount, date) {
