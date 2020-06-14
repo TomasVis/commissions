@@ -1,4 +1,4 @@
-# commissions
+# Commissions
 program that calculates payment operation commissions based on the type of the payment and the type of the user
 ### Installation
 
